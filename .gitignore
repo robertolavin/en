@@ -1,0 +1,9 @@
+/database/ib_logfile*
+*.ibd
+*.frm
+*.log
+*.sock
+
+.env
+metodos_importantes/
+database/

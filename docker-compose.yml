@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: ./backend  # Donde está el Dockerfile
+      dockerfile: Dockerfile  # Nombre del Dockerfile dentro de ./backend
+    container_name: web-en
+    restart: always
+    volumes:
+      - .:/usr/src/app  # Monta todo el proyecto, incluida la raíz donde está manage.py
+    ports:
+      - "8000:8000"
+    command: ["./wait-for-it.sh", "${DB_HOST}:${DB_PORT}", "--", "python", "../manage.py", "runserver", "0.0.0.0:8000"]  # Ajustamos para que manage.py esté en la raíz
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+
+
+

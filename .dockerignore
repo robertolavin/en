@@ -1,0 +1,7 @@
+# Ignorar el archivo .env en Docker
+.git
+__pycache__
+*.pyc
+*.pyo
+.env
+database
