@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Encuestas - Panel de Administración{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}"> <!-- CSS global -->
+    {% block extra_css %}{% endblock %} <!-- Bloque para CSS específico de cada página -->
+</head>
+<body>
+    <!-- Header con Navegación -->
+    <header class="header">
+        <h1 class="header-title">Panel de Administración de Encuestas</h1>
+        <nav class="nav">
+            <!-- Enlaces a los paneles de crear encuesta y gestionar preguntas -->
+            <a href="{% url 'create_survey' %}">Crear Encuesta</a>
+            <a href="{% url 'manage_questions' %}">Gestionar Preguntas</a>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Encuestas. Todos los derechos reservados.</p>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
+
+
+

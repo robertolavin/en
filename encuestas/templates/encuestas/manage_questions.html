@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Gestionar Preguntas{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Gestionar Preguntas de Encuestas</h2>
+    <form method="get">
+        <label for="survey">Seleccionar Encuesta:</label>
+        <select name="survey_id" onchange="this.form.submit()">
+            <option value="">Selecciona una encuesta</option>
+            {% for survey in surveys %}
+                <option value="{{ survey.id }}" {% if selected_survey and survey.id == selected_survey.id %}selected{% endif %}>{{ survey.name }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    {% if selected_survey %}
+        <h3>Preguntas para: {{ selected_survey.name }}</h3>
+        <ul>
+            {% for question in questions %}
+                <li>{{ question.text }} - {{ question.get_question_type_display }}</li>
+            {% empty %}
+                <li>No hay preguntas para esta encuesta.</li>
+            {% endfor %}
+        </ul>
+
+        <h4>Agregar Pregunta</h4>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar Pregunta</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

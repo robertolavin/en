@@ -1,0 +1,82 @@
+/* Fondo del body */
+body {
+    background-color: #0D0F12; /* Oscuridad profunda */
+    color: #D0D0D0; /* Gris suave */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #1A1C1F; /* Negro ligeramente suave */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Sombra profunda */
+}
+
+.header-title {
+    color: #C62828; /* Rojo oscuro, tipo neón */
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(198, 40, 40, 0.8), 0 0 20px rgba(198, 40, 40, 0.6); /* Efecto neón apagado */
+}
+
+/* Navegación */
+.nav a {
+    color: #9E9E9E; /* Gris oscuro */
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav a:hover {
+    color: #C62828; /* Rojo oscuro en hover */
+    text-shadow: 0 0 6px rgba(198, 40, 40, 0.7), 0 0 15px rgba(198, 40, 40, 0.5); /* Neón apagado */
+}
+
+/* Contenedor Principal */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #14181C; /* Fondo oscuro pero menos intenso que el header */
+}
+
+/* Footer */
+.footer {
+    background-color: #1A1C1F;
+    text-align: center;
+    padding: 15px;
+    color: #6D6E71; /* Gris medio */
+    font-size: 0.85em;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.6); /* Sombra profunda en la parte superior */
+}
+
+/* Botones de navegación */
+.button {
+    background-color: #2D3133; /* Gris oscuro */
+    color: #D0D0D0;
+    padding: 12px 25px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.05em;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    box-shadow: 0 0 8px rgba(198, 40, 40, 0.3); /* Sombra de neón sutil */
+}
+
+.button:hover {
+    background-color: #C62828; /* Fondo rojo en hover */
+    color: #0D0F12; /* Texto oscuro en hover */
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(198, 40, 40, 0.6), 0 0 25px rgba(198, 40, 40, 0.4); /* Aumento de brillo sutil */
+}
